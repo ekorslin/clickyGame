@@ -16,12 +16,24 @@ handleClick = id => {
     this.handleScore();
   } else {
     alert(`Sorry.  You have already selected this character!`);
-    this.setState({score: 0});
+    this.setState({clicked: [], score: 0});
+
   }
 };
 
 handleScore = () =>
   this.setState({score: this.state.score +1});
+
+topScore = () => {
+  if (this.state.score > this.state.topScore) {
+    this.setState({topScore: this.state.topScore});
+    alert("Congratualtions.  You are the new top score!")
+  } else {
+    alert(`Sorry.  You have already selected this character!`);
+    this.setState({clicked: [], score: 0});
+
+  }
+  };
   
 
   render() {
