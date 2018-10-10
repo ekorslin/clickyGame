@@ -24,12 +24,13 @@ handleIncrement = () => {
   this.setState({score: this.state.score +1})};
 
 handleScore = () => {
-  if (this.state.score >= this.state.topScore) {
+  console.log(this.state.score);
+  if (this.state.score +1 === 12) {
+    alert(`Congratuatlions...You win!`);
+    this.setState({clicked: [], score: 0, topScore: 12});
+  } else if (this.state.score >= this.state.topScore) {
     this.setState({ topScore: this.state.score +1});
-  } else {
-
-  }
-};
+}};
   
 
   render() {
