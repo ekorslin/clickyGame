@@ -54,3 +54,12 @@ p {
   text-shadow: 3px 3px 12px grey;
   font-weight: bold;
 }
+
+a {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+footer {
+  color: white;
+  height: 100px;
+}
