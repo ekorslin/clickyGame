@@ -7,14 +7,21 @@ class App extends Component {
 state = {
   clicked: [],
   score: 0,
+  topScore: 0,
 };
 
+handleClick = id => {
+  if (this.state.clicked.includes(id.target.id) === false) {
+    this.setState({clicked:  [...this.state.clicked, id.target.id]});
+    this.handleScore();
+  } else {
+    alert(`Sorry.  You have already selected this character!`);
+    this.setState({score: 0});
+  }
+};
 
-handleClick = id => 
-this.setState({
-  clicked: [...this.state.clicked, id.target.id]
-},
-console.log(this.state.clicked.includes(id.target.id)));
+handleScore = () =>
+  this.setState({score: this.state.score +1});
   
 
   render() {
@@ -40,7 +47,7 @@ console.log(this.state.clicked.includes(id.target.id)));
       </li> */}
     </ul>
     <span className="navbar-text">
-      Score: {this.state.score} | Top Score: 0
+      Score: {this.state.score} | Top Score: {this.state.topScore}
     </span>
   </div>
 </nav>
