@@ -13,27 +13,23 @@ state = {
 handleClick = id => {
   if (this.state.clicked.includes(id.target.id) === false) {
     this.setState({clicked:  [...this.state.clicked, id.target.id]});
+    this.handleIncrement();
     this.handleScore();
   } else {
     alert(`Sorry.  You have already selected this character!`);
     this.setState({clicked: [], score: 0});
+  }};
+
+handleIncrement = () => {
+  this.setState({score: this.state.score +1})};
+
+handleScore = () => {
+  if (this.state.score >= this.state.topScore) {
+    this.setState({ topScore: this.state.score +1});
+  } else {
 
   }
 };
-
-handleScore = () =>
-  this.setState({score: this.state.score +1});
-
-topScore = () => {
-  if (this.state.score > this.state.topScore) {
-    this.setState({topScore: this.state.topScore});
-    alert("Congratualtions.  You are the new top score!")
-  } else {
-    alert(`Sorry.  You have already selected this character!`);
-    this.setState({clicked: [], score: 0});
-
-  }
-  };
   
 
   render() {
