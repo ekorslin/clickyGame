@@ -6,27 +6,16 @@ class App extends Component {
 
 state = {
   clicked: [],
+  score: 0,
 };
 
-// setToArray = id =>
-//   this.setState({
-//     clicked: [...this.state.clicked, id.target.id]
-//   }, console.log(this.state.clicked));
-
-// var checkClicked;
-// if (this.state.clicked.some(e => e.id === id.target.id)) {
-//   alert("Sorry!  You've already picked this card.  Try again?")
-// } else {
-//   this.setToArray()};
 
 handleClick = id => 
 this.setState({
   clicked: [...this.state.clicked, id.target.id]
-}, console.log(this.state.clicked));
-
-
-
-    
+},
+console.log(this.state.clicked.includes(id.target.id)));
+  
 
   render() {
     return (
@@ -51,7 +40,7 @@ this.setState({
       </li> */}
     </ul>
     <span className="navbar-text">
-      Score: 0 | Top Score: 0
+      Score: {this.state.score} | Top Score: 0
     </span>
   </div>
 </nav>
